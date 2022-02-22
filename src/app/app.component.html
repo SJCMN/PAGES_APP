@@ -1,5 +1,8 @@
 <nav>
-  <ul class="pagination">
+  <ul 
+  appAddClass
+  class="pagination"
+  >
 
     <li 
     class="page-item"
@@ -28,6 +31,21 @@
 <div>
   <h4>{{ images[currentPage].title }}</h4>
   <img [src]="images[currentPage].url"/>
+</div>
+
+<div [ngSwitch]="currentPage">
+  <div *ngSwitchCase="0">
+    Current Page is 1
+  </div>
+  <div *ngSwitchCase="1">
+    Current Page is 2
+  </div>
+  <div *ngSwitchCase="2">
+    Current Page is 3
+  </div>
+  <div *ngSwitchDefault>
+    Unknown Page 000
+  </div>
 </div>
 
 
